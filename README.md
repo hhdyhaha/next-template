@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js 应用模版
 
-## Getting Started
+这是一个基于 [Next.js](https://nextjs.org) 14.2.28 的应用模版，结合了 TailwindCSS、shadcn/ui 和 Zustand 等现代前端技术，提供了一个功能完整的开发起点。
 
-First, run the development server:
+## 特性
+
+- ✅ 使用 **Next.js App Router** 架构
+- ✅ 基于 **TailwindCSS** 的响应式设计
+- ✅ 使用 **shadcn/ui** 组件库
+- ✅ **Zustand** 状态管理
+- ✅ 内置明暗主题切换
+- ✅ 使用 **TypeScript** 类型安全
+- ✅ 推荐使用 **pnpm** 包管理器
+- ✅ 符合最佳实践的项目结构
+
+## 快速开始
+
+首先，安装依赖并运行开发服务器（推荐使用 pnpm）:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# 安装依赖（推荐使用pnpm）
+pnpm install
+# 或
+npm install
+# 或
+yarn install
+
+# 启动开发服务器
 pnpm dev
-# or
-bun dev
+# 或
+npm run dev
+# 或
+yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+在浏览器中打开 [http://localhost:3000](http://localhost:3000) 查看结果。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 项目结构
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+/
+├── app/                  # Next.js App Router
+│   ├── components/       # 应用级UI组件
+│   ├── (routes)/         # 路由分组
+│   ├── store/            # Zustand 状态管理
+│   ├── lib/              # 工具函数和库
+│   ├── providers.tsx     # 全局Provider
+│   ├── layout.tsx        # 根布局
+│   └── page.tsx          # 首页
+├── components/           # 全局共享组件
+│   └── ui/               # 基础UI组件(shadcn/ui)
+├── public/               # 静态资源
+└── ...配置文件
+```
 
-## Learn More
+## 主要功能
 
-To learn more about Next.js, take a look at the following resources:
+### 组件库
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+项目使用 [shadcn/ui](https://ui.shadcn.com/)，这是一个基于 Radix UI 的高质量组件集合，包括按钮、卡片、对话框等。组件都支持明暗主题切换。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 状态管理
 
-## Deploy on Vercel
+项目使用 [Zustand](https://github.com/pmndrs/zustand) 进行状态管理。示例包括:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `useThemeStore`: 管理应用主题
+- `useCounterStore`: 基本计数器示例
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 主题支持
+
+内置明暗主题切换，支持:
+
+- 明亮模式
+- 暗黑模式
+- 跟随系统设置
+
+主题状态使用 Zustand 持久化到 localStorage。
+
+## 构建生产版本
+
+```bash
+pnpm build
+# 或
+npm run build
+# 或
+yarn build
+```
+
+生成的应用可以用下面的命令启动:
+
+```bash
+pnpm start
+# 或
+npm run start
+# 或
+yarn start
+```
+
+## 学习更多
+
+- [Next.js 文档](https://nextjs.org/docs) - 学习 Next.js 的特性和 API
+- [TailwindCSS](https://tailwindcss.com/docs) - 了解 TailwindCSS
+- [shadcn/ui](https://ui.shadcn.com/) - 了解组件库
+- [Zustand](https://github.com/pmndrs/zustand) - 了解状态管理
+
+## 在 Vercel 上部署
+
+部署 Next.js 应用的最简单方式是使用 Next.js 创建者开发的 [Vercel 平台](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)。
+
+查看 [Next.js 部署文档](https://nextjs.org/docs/app/building-your-application/deploying) 了解更多详情。
