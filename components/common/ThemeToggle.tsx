@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { useTheme } from '../store/useThemeStore'
+import { useTheme } from '@/app/store/useThemeStore'
 import { Button } from "@/components/ui/button"
 import { 
   DropdownMenu, 
@@ -57,4 +57,4 @@ export default function ThemeToggle() {
       </DropdownMenuContent>
     </DropdownMenu>
   )
-} 
+}
