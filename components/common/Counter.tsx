@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import useCounterStore from '@/app/store/useCounterStore'
+import useCounterStore from '@/store/useCounterStore'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 

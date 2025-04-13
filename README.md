@@ -39,16 +39,19 @@ yarn dev
 
 ```
 /
-├── app/                  # Next.js App Router
-│   ├── components/       # 应用级UI组件
-│   ├── (routes)/         # 路由分组
-│   ├── store/            # Zustand 状态管理
+├── app/                    # Next.js App Router（仅用于路由）
+│   ├── (routes)/          # 路由分组
+│   ├── layout.tsx         # 根布局
+│   └── page.tsx           # 首页
+├── src/                   # 源代码目录
+│   ├── components/        # 全局共享组件
+│   │   ├── common/       # 通用组件
+│   │   └── ui/          # 基础UI组件(shadcn/ui)
 │   ├── lib/              # 工具函数和库
-│   ├── providers.tsx     # 全局Provider
-│   ├── layout.tsx        # 根布局
-│   └── page.tsx          # 首页
-├── components/           # 全局共享组件
-│   └── ui/               # 基础UI组件(shadcn/ui)
+│   ├── store/            # Zustand 状态管理
+│   ├── styles/           # 全局样式
+│   ├── fonts/            # 字体文件
+│   └── providers.tsx     # 全局Provider
 ├── public/               # 静态资源
 └── ...配置文件
 ```
