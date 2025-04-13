@@ -10,6 +10,8 @@
 - ✅ **Zustand** 状态管理
 - ✅ 内置明暗主题切换
 - ✅ 使用 **TypeScript** 类型安全
+- ✅ 集成 **Vitest** 测试框架
+- ✅ 使用 **Geist** 字体
 - ✅ 推荐使用 **pnpm** 包管理器
 - ✅ 符合最佳实践的项目结构
 
@@ -40,20 +42,20 @@ yarn dev
 ```
 /
 ├── app/                    # Next.js App Router（仅用于路由）
-│   ├── (routes)/          # 路由分组
 │   ├── layout.tsx         # 根布局
-│   └── page.tsx           # 首页
-├── src/                   # 源代码目录
-│   ├── components/        # 全局共享组件
-│   │   ├── common/       # 通用组件
-│   │   └── ui/          # 基础UI组件(shadcn/ui)
-│   ├── lib/              # 工具函数和库
-│   ├── store/            # Zustand 状态管理
-│   ├── styles/           # 全局样式
-│   ├── fonts/            # 字体文件
-│   └── providers.tsx     # 全局Provider
-├── public/               # 静态资源
-└── ...配置文件
+│   ├── page.tsx           # 首页
+│   └── about/            # 关于页面
+├── components/            # 全局共享组件
+│   ├── common/           # 通用组件（如Navbar、ThemeToggle等）
+│   └── ui/              # 基础UI组件(shadcn/ui)
+├── lib/                  # 工具函数和库
+├── store/                # Zustand 状态管理
+│   ├── useThemeStore.ts  # 主题状态
+│   └── useCounterStore.ts # 计数器示例
+├── styles/               # 全局样式
+├── public/              # 静态资源
+│   └── fonts/          # Geist 字体文件
+└── providers.tsx        # 全局Provider
 ```
 
 ## 主要功能
@@ -66,7 +68,7 @@ yarn dev
 
 项目使用 [Zustand](https://github.com/pmndrs/zustand) 进行状态管理。示例包括:
 
-- `useThemeStore`: 管理应用主题
+- `useThemeStore`: 管理应用主题（支持持久化）
 - `useCounterStore`: 基本计数器示例
 
 ### 主题支持
@@ -78,6 +80,24 @@ yarn dev
 - 跟随系统设置
 
 主题状态使用 Zustand 持久化到 localStorage。
+
+### 字体
+
+项目使用 [Geist](https://vercel.com/font) 字体：
+
+- Geist Sans: 用于一般文本
+- Geist Mono: 用于等宽文本
+
+### 测试
+
+项目使用 Vitest 进行单元测试：
+
+```bash
+# 运行测试
+pnpm test
+# 监视模式
+pnpm test:watch
+```
 
 ## 构建生产版本
 
@@ -105,6 +125,7 @@ yarn start
 - [TailwindCSS](https://tailwindcss.com/docs) - 了解 TailwindCSS
 - [shadcn/ui](https://ui.shadcn.com/) - 了解组件库
 - [Zustand](https://github.com/pmndrs/zustand) - 了解状态管理
+- [Vitest](https://vitest.dev/) - 了解测试框架
 
 ## 在 Vercel 上部署
 
