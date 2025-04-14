@@ -1,9 +1,19 @@
+'use client'
+import { useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import Counter from "@/components/common/Counter";
 
 export default function Home() {
+  useEffect(() => {
+    fetch('/api/users?id=1')
+      .then(res => res.json())
+      .then(data => {
+        console.log('查询结果：', data)
+      })
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <section className="mb-12 text-center">
