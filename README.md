@@ -132,3 +132,33 @@ yarn start
 部署 Next.js 应用的最简单方式是使用 Next.js 创建者开发的 [Vercel 平台](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)。
 
 查看 [Next.js 部署文档](https://nextjs.org/docs/app/building-your-application/deploying) 了解更多详情。
+
+## 数据库设置 (Prisma + PostgreSQL)
+
+本项目使用Prisma作为ORM，默认连接PostgreSQL数据库。
+
+### 设置步骤
+
+1. 确保您已安装PostgreSQL数据库
+2. 创建一个数据库（例如`next-template`）
+3. 在`.env`文件中更新数据库连接字符串：
+   ```
+   DATABASE_URL="postgresql://用户名:密码@主机:端口/数据库名?schema=public"
+   ```
+
+4. 运行数据库迁移命令：
+   ```bash
+   npx prisma migrate dev --name init
+   ```
+
+5. 生成Prisma客户端：
+   ```bash
+   npx prisma generate
+   ```
+
+### 填充示例数据
+
+启动开发服务器后，访问以下URL填充示例数据：
+```
+http://localhost:3000/api/seed
+```

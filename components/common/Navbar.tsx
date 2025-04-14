@@ -31,6 +31,9 @@ export default function Navbar() {
               <Link href="/" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground">
                 首页
               </Link>
+              <Link href="/todos" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground">
+                待办
+              </Link>
               <Link href="/about" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground">
                 关于
               </Link>
